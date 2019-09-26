@@ -27,5 +27,4 @@ ggplot()+
   geom_bar(data = df2, aes(x = label, fill = label))+
   labs(y = "A",
        title = "B")+
-  scale_fill_manual(values=(c("grey","black")))+
   theme_dark()
