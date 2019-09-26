@@ -13,4 +13,19 @@ WHERE {
 }'
 df <- query_wikidata(sparql_query)
 
-View(df)
+typeof(df)
+
+df2 <- as.data.frame(df)
+
+typeof(df2)
+
+View(df2)
+
+library(ggplot2)
+
+ggplot()+
+  geom_bar(data = df2, aes(x = label, fill = label))+
+  labs(y = "A",
+       title = "B")+
+  scale_fill_manual(values=(c("grey","black")))+
+  theme_dark()
